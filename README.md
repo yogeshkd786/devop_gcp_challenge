@@ -18,4 +18,4 @@
 ## Script example
    1. Execute chmod 755 Dockerfile
    2. "./Dockerbuild.sh"
-   3. kubectl get svc <applabel>   
+   3. kubectl get svc nexus3   
