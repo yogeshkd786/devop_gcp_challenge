@@ -45,10 +45,11 @@ checkdeployment=$(helm list -a)
 
 cd helmCharts/app/   
 if [[ $checkdeployment ]]; then
+    echo "helm upgrade"
     helm upgrade --install $releasename .
 else
-    helm install -n $releasename .
+    echo "helm install"
+    helm install --name $releasename .
 fi
 
-kubectl get svc $applabel
 

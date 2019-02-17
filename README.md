@@ -17,4 +17,5 @@
 
 ## Script example
    1. Execute chmod 755 Dockerfile
-   2. "./Dcokerbuild.sh"   
+   2. "./Dockerbuild.sh"
+   3. kubectl get svc <applabel>   
