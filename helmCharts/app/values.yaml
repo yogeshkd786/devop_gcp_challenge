@@ -1,0 +1,21 @@
+environment: Test
+appVersion: 1.0.0
+
+feApp:
+  namespace: default
+  label: nexus3
+  replicaCount: 1
+  image:
+    repo: yogeshkad786/devop_gcp_challenge
+    tag: master.1
+  resources:
+    requests:
+      cpu: 250m
+    limits:
+      cpu: 500m
+  port: 8081
+
+feSvc:
+  namespace: default
+  label: nexus3
+  port: 8081
