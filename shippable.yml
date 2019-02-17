@@ -1,0 +1,20 @@
+language: node_js
+
+branches:
+  only:
+    - master
+
+integrations:
+  hub:
+    - integrationName: devops-assignment-dockerhub     # integration name from step 1a
+      type: dockerRegistryLogin
+
+env:
+  global:
+    - DOCKER_REPO="devop_gcp_challenge"
+    - DOCKER_ACC=yogeshkad786 # replace with your Docker Hub account name    
+
+build:
+  ci:
+    - docker build -t $DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER .
+    - docker push $DOCKER_ACC/$DOCKER_REPO:$BRANCH.$BUILD_NUMBER
